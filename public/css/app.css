@@ -1,0 +1,107 @@
+:root {
+    color-scheme: light;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overscroll-behavior: none;
+}
+
+.material-symbols-outlined {
+    display: inline-block;
+    overflow: hidden;
+    font-family: "Material Symbols Outlined", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-feature-settings: "liga";
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: #d7e9f4;
+    color: #003b5c;
+}
+
+.calendar-month-title {
+    margin-bottom: 0.75rem;
+    color: #003b5c;
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.25rem;
+    text-align: center;
+}
+
+.calendar-weekday {
+    padding: 0.35rem 0;
+    color: #64748b;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.calendar-day {
+    display: grid;
+    min-height: 2.35rem;
+    place-items: center;
+    border: 0;
+    border-radius: 0.55rem;
+    background: transparent;
+    color: #102f42;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.8rem;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.calendar-day:not(:disabled):hover {
+    background: #dceefa;
+    color: #003b5c;
+    transform: translateY(-1px);
+}
+
+.calendar-day.is-muted {
+    color: #cbd5e1;
+    cursor: default;
+}
+
+.calendar-day:disabled {
+    background: #f1f5f9;
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.calendar-day.is-selected,
+.calendar-day.is-range {
+    border-radius: 0;
+    background: #075883;
+    color: white;
+    font-weight: 700;
+}
+
+.calendar-day.is-start {
+    border-radius: 0.55rem 0 0 0.55rem;
+}
+
+.calendar-day.is-end {
+    border-radius: 0 0.55rem 0.55rem 0;
+}
+
+.calendar-day.is-start.is-end {
+    border-radius: 0.55rem;
+}
